@@ -13,7 +13,6 @@ const config = {
 			pages: 'build',
 			assets: 'build',
 			fallback: null,
-			precompress: false,
 		}),
 		prerender: {
 			default: true,
