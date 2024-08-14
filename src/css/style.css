@@ -1,0 +1,64 @@
+:root {
+    --background: #1f2335;
+    --foreground: #c0caf5;
+    --title: #c3e88d;
+    --link: #ff007c;
+    --link-hover: #ff757f;
+  }
+  
+  @font-face {
+    font-family: "Fantasque";
+    src: url('../font/FantasqueSansMNerdFont-Regular.ttf');
+  }
+
+  @font-face {
+    font-family: "Jetbrains";
+    src: url('../font/JetBrainsMonoNerdFont-Regular.ttf');
+  }
+  
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: 'Jetbrains', Tahoma, Verdana, sans-serif;
+  }
+  
+  h1, h3 {
+    color: var(--title);
+  }
+
+  a {
+    color: var(--link);
+  }
+
+  a:hover {
+    color: var(--link-hover);
+  }
+
+  li {
+    list-style: none;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+  }
+
+  nav > ul {
+    display: flex;
+  
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
