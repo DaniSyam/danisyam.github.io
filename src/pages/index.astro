@@ -2,7 +2,7 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { SITE_TITLE, SITE_DESCRIPTION, SITE_PROJECTS } from '../consts';
 ---
 
 <!doctype html>
@@ -12,38 +12,48 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	</head>
 	<body>
 		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+		<main class="flex flex-col gap-4 p-6">
+			<section>
+				<h3>INTRODUCTION</h3>
+				<p>
+					Halo! Saya Dani, pengembang web yang selalu ingin belajar dan menciptakan solusi digital inovatif. Di sini Anda akan menemukan karya terbaik saya yang menggabungkan fungsionalitas dan estetika. Saya selalu siap untuk mengubah ide-ide kreatif menjadi aplikasi web yang menakjubkan. Tertarik berkolaborasi atau ingin tahu lebih banyak? Ayo kita bicarakan!
+				</p>
+			</section>
+			<section>
+				<h3>ABOUT ME</h3>
+				<p>
+					Ketertarikan saya pada teknologi sudah ada sejak remaja, namun perjalanan pemrograman saya yang sebenarnya dimulai pada tahun 2015 dengan JavaScript. Sebagai pengembang otodidak, saya memperoleh keterampilan saya melalui kontribusi sumber terbuka, serta membaca berbagai dokumentasi proyek dan posting blog.
+				</p>
+			</section>
+			<section>
+				<h3>PROJECTS</h3>
+				<p>Jelajahi Projects terbaru saya di sini:</p>
+				<ul class="list-disc pl-4 pt-2">
+					{SITE_PROJECTS.map((project) => (
+						<li>
+							<a href={project.link}>{project.title}</a>
+						</li>
+					))}
+				</ul>
+			</section>
+			<section>
+				<h3>EXPERIENCE</h3>
+				<p>
+					Pengalaman pengembang saya dimulai saat seorang wiraswasta mempekerjakan saya untuk membuat sebuat website market yang berfokus pada fasion. Selama 5 tahun saya memaintence menggunakan HTML, CSS, dan JavaScript.
+				</p>
+			</section>
+			<section>
+				<h3>INTERESTS</h3>
+				<p>
+					Di luar pekerjaan, saya senang bepergian, menulis blog dan membaca fiksi, terutama karya bergenre Teknologi, Science Fiction, dan Fantasy.
+				</p>
+			</section>
+			<section>
+				<h3>SOCIAL</h3>
+				<p>
+					Anda dapat terhubung dengan saya di eMail, <a class="underline" href="#">GitHub</a> dan <a class="underline" href="#">LinkedIn</a>.
+				</p>
+			</section>
 		</main>
 		<Footer />
 	</body>

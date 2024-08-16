@@ -1,9 +1,9 @@
 {
-  "name": "",
+  "name": "danisyam",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "astro dev --host",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
@@ -13,6 +13,8 @@
     "@astrojs/mdx": "^3.1.3",
     "@astrojs/rss": "^4.0.7",
     "@astrojs/sitemap": "^3.1.6",
-    "astro": "^4.14.2"
+    "@astrojs/tailwind": "^5.1.0",
+    "astro": "^4.14.2",
+    "tailwindcss": "^3.4.10"
   }
 }
