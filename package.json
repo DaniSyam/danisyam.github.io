@@ -7,6 +7,8 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
+    "devtools:disable": "astro preferences disable devToolbar",
+    "devtools:enable": "astro preferences enable devToolbar",
     "astro": "astro"
   },
   "dependencies": {
