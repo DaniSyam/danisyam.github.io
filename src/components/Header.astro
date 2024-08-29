@@ -1,0 +1,43 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<header class="sticky top-0 right-0 left-0 bg-white shadow flex justify-between items-center py-3 px-6">
+	<a href="/">
+		<h1 class="font-semibold text-2xl">Dani S</h1>
+	</a>
+	<ul class="hidden">
+		<li>
+			<a href="/">Home</a>
+		</li>
+		<li>
+			<a href="/about">About</a>
+		</li>
+		<li>
+			<a href="/contact">Contact</a>
+		</li>
+	</ul>
+	<div class="flex items-center gap-4 text-3xl">
+		<button>
+			<Icon name="material-symbols-light:dark-mode" />
+		</button>
+		<button>
+			<Icon name="material-symbols-light:menu" />
+		</button>
+	</div>
+
+	<ul class="fixed bg-white border shadow-md rounded p-4 flex flex-col gap-2 top-14 right-7">
+		<li>
+			<a href="/">Home</a>
+		</li>
+		<li>
+			<a href="/">Articles</a>
+		</li>
+		<li>
+			<a href="/">Projects</a>
+		</li>
+		<li>
+			<a href="/">Links</a>
+		</li>
+	</ul>
+</header>
