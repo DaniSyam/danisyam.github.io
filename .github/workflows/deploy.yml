@@ -24,11 +24,11 @@ jobs:
 
     # Install dependencies
     - name: Install dependencies
-      run: npm ci
+      run: pnpm ci
 
     # Build proyek Vite
     - name: Build project
-      run: npm run build
+      run: pnpm run build
 
     # Deploy ke GitHub Pages menggunakan branch `gh-pages`
     - name: Deploy to GitHub Pages
