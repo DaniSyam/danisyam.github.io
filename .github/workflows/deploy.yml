@@ -1,33 +1,39 @@
-name: Deploy to GitHub Pages
+name: Deploy Vite to GitHub Pages
 
+# Jalankan workflow ini setiap kali push ke branch utama (misalnya main atau master)
 on:
   push:
-    branches: [ main ]
-  workflow_dispatch:
+    branches:
+      - main  # Ganti dengan nama branch utama Anda jika berbeda
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
+# Tentukan environment (nodejs) yang akan digunakan
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout your repository using git
-        uses: actions/checkout@v4
-      - name: Install, build, and upload your site
-        uses: withastro/action@v2
-        with:
-          package-manager: npm@latest
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+    # Checkout repository
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    # Setup Node.js untuk Vite
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'  # Versi Node.js yang sesuai dengan proyek Anda
+
+    # Install dependencies
+    - name: Install dependencies
+      run: npm ci
+
+    # Build proyek Vite
+    - name: Build project
+      run: npm run build
+
+    # Deploy ke GitHub Pages menggunakan branch `gh-pages`
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist  # Direktori output build Vite (default: `dist`)
+
