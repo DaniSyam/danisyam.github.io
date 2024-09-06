@@ -1,12 +1,10 @@
 name: Deploy Vite to GitHub Pages
 
-# Jalankan workflow ini setiap kali push ke branch utama (misalnya main atau master)
 on:
   push:
     branches:
-      - main  # Ganti dengan nama branch utama Anda jika berbeda
+      - main  # Ganti dengan branch utama Anda jika berbeda
 
-# Tentukan environment (nodejs) yang akan digunakan
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -16,17 +14,21 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    # Setup Node.js untuk Vite
+    # Setup Node.js untuk pnpm
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '18'  # Versi Node.js yang sesuai dengan proyek Anda
+        node-version: '18'  # Sesuaikan dengan versi Node.js proyek Anda
 
-    # Install dependencies
+    # Install pnpm
+    - name: Install pnpm
+      run: npm install -g pnpm
+
+    # Install dependencies dengan pnpm
     - name: Install dependencies
-      run: pnpm ci
+      run: pnpm install
 
-    # Build proyek Vite
+    # Build proyek Vite dengan pnpm
     - name: Build project
       run: pnpm run build
 
@@ -36,4 +38,3 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./dist  # Direktori output build Vite (default: `dist`)
-
