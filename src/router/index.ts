@@ -14,7 +14,8 @@ const routes = [
 ]
 
 const router = createRouter({
-    history: createWebHistory('/'),
+    // Ubah ini untuk menggunakan base URL yang sesuai dengan repositori GitHub Pages Anda
+    history: createWebHistory(import.meta.env.BASE_URL),
     routes
 })
 
