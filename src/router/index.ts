@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 
 const routes = [
     {
@@ -14,8 +14,7 @@ const routes = [
 ]
 
 const router = createRouter({
-    // Ubah ini untuk menggunakan base URL yang sesuai dengan repositori GitHub Pages Anda
-    history: createWebHistory(import.meta.env.BASE_URL),
+    history: createWebHashHistory(),
     routes
 })
 
