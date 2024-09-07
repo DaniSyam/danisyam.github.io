@@ -1,16 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { HashRouter, Route, Routes } from 'react-router-dom';
-import './index.css';
-import Home from '@/pages/Home';
-import About from '@/pages/About';
-ReactDOM.createRoot(document.getElementById('root')!).render(
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import  Home  from "@/pages/Home.tsx";
+import  About  from "@/pages/About.tsx";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+    children: [
+      {
+        path: "/about",
+        element: <About />,
+      },
+    ],
+  },
+]);
+
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <HashRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
-    </HashRouter>
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
